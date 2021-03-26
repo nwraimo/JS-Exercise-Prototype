@@ -79,7 +79,7 @@ function Airplane(name) {
     this.odometer = 0;
     Car.prototype.fill = function(gallons){
       if(this.tank.length < 40){
-        this.tank.push(gallons);
+        this.tank.push(gallons) + 1;
       }
     }
   }
@@ -92,9 +92,16 @@ function Airplane(name) {
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby() {
-   
-  }
+          class Baby extends Person {
+            constructor(name, age, favoriteToy){
+              super(name, age)
+              this.favoriteToy = favoriteToy;
+            }
+            
+            play(){
+              return `Playing with ${this.favoriteToy}`
+            }
+          }
  
   
   /* 
