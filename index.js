@@ -54,14 +54,7 @@ function Airplane(name) {
     Person.prototype.toString = function(){
       return `${this.name}, ${this.age}`;
     }
-  }
-
-  // const mary = new Person({name: 'Mary', age: 50});
-  // mary.eat();
-  // mary.poop();
-  // mary.toString();
-
-  
+  } 
   
   
   
@@ -79,8 +72,16 @@ function Airplane(name) {
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
   
- function Car() {
-    
+ function Car(model, milesPerGallon) {
+    this.model = model;
+    this.milesPerGallon = milesPerGallon;
+    this.tank = 0;
+    this.odometer = 0;
+    Car.prototype.fill = function(gallons){
+      if(this.tank.length < 40){
+        this.tank.push(gallons);
+      }
+    }
   }
   
   
