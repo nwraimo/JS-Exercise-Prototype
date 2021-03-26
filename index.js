@@ -40,20 +40,26 @@ function Airplane(name) {
   */
   
  function Person(name, age) {
-    this.name;
-    this.age;
+    this.name = name;
+    this.age = age;
     this.stomach = [];
-    this.eat = function(someFood){
-      this.stomach.push(someFood);
+    Person.prototype.eat = function(someFood){
+      if(this.stomach.length < 10){
+        this.stomach.push(someFood);
+      }
     };
-    this.poop = function(){
-      this.stomach = [];
+    Person.prototype.poop = function(){
+      return this.stomach = [];
     };
-    this.toString = () => { return `${this.name}, ${this.age}`}
+    Person.prototype.toString = function(){
+      return `${this.name}, ${this.age}`;
+    }
   }
 
-  const mary = new Person('Mary', 50);
-  console.log(mary.name, mary.age);
+  // const mary = new Person({name: 'Mary', age: 50});
+  // mary.eat();
+  // mary.poop();
+  // mary.toString();
 
   
   
